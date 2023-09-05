@@ -1,0 +1,101 @@
+body {
+  font-family: "Signika", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: radial-gradient(
+    circle,
+    rgba(36, 36, 36, 1) 0%,
+    rgba(16, 16, 16, 1) 100%
+  );
+  user-select: none;
+}
+
+.cart {
+  position: relative;
+  width: 200px;
+  height: 300px;
+}
+
+.cart:hover .character {
+  --rotate: 0deg;
+}
+
+.cart:hover .back {
+  --rotate: 180deg;
+}
+
+.sprite {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 2px currentColor solid;
+  cursor: pointer;
+  overflow: hidden;
+  transform: perspective(800px) rotateY(var(--rotate));
+  transition: 0.8s transform;
+  backface-visibility: hidden;
+}
+
+.characters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.character {
+  --rotate: -180deg;
+  background-image: url(../img/game.png);
+  background-image: url(../img/game.png),
+    radial-gradient(circle, rgba(36, 36, 36, 1) 0%, rgba(16, 16, 16, 1) 100%);
+  background-repeat: no-repeat;
+  background-size: 600px auto;
+  background-position-y: center;
+}
+
+.back {
+  --rotate: 0deg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  text-align: center;
+  text-transform: uppercase;
+  background-image: radial-gradient(
+    circle,
+    rgba(36, 36, 36, 1) 0%,
+    rgba(16, 16, 16, 1) 100%
+  );
+  /* z-index: -1; */
+}
+
+[data-unit="rock"] {
+  background-position-x: 0px;
+  color: #db2b80;
+}
+
+[data-unit="paper"] {
+  background-position-x: -200px;
+  color: #3d94c9;
+}
+
+[data-unit="scissors"] {
+  background-position-x: -400px;
+  color: #d1ca3b;
+}
+
+[data-unit="rock"] + .sprite {
+  color: #db2b80;
+}
+
+[data-unit="paper"] + .sprite {
+  color: #3d94c9;
+}
+
+[data-unit="scissors"] + .sprite {
+  color: #d1ca3b;
+}
