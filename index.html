@@ -14,21 +14,61 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <div class="characters">
-      <div class="cart">
-        <div class="sprite character" data-unit="rock"></div>
-        <div class="sprite back">Rock</div>
+    <div class="information" data-role="information">
+      <h1 class="title">Rock Paper Scissors</h1>
+      <button class="btn" data-click="start">Start</button>
+    </div>
+    <div class="wrapper" data-role="field">
+      <div class="page">
+        <div class="status">
+          <p class="name clr-rock">
+            You: <span class="value" data-counter="player">0</span>
+          </p>
+          <p class="name clr-scissors">
+            Computer: <span class="value" data-counter="computer">0</span>
+          </p>
+        </div>
+
+        <div class="characters" data-role="characters">
+          <div class="cart" data-unit="rock">
+            <div class="sprite character"></div>
+            <div class="sprite back">Rock</div>
+          </div>
+          <div class="cart" data-unit="paper">
+            <div class="sprite character"></div>
+            <div class="sprite back">Paper</div>
+          </div>
+          <div class="cart" data-unit="scissors">
+            <div class="sprite character"></div>
+            <div class="sprite back">Scissors</div>
+          </div>
+        </div>
       </div>
-      <div class="cart">
-        <div class="sprite character" data-unit="paper"></div>
-        <div class="sprite back">Paper</div>
-      </div>
-      <div class="cart">
-        <div class="sprite character" data-unit="scissors"></div>
-        <div class="sprite back">Scissors</div>
+      <div class="page">
+        <div class="text--result" data-result="win">
+          <h2 class="name" data-text="result">You win!</h2>
+          <p data-text="description">Stone wins over scissors</p>
+          <button class="btn" data-click="continue">
+            <span class="dots">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </span>
+          </button>
+        </div>
+        <div class="round">
+          <div class="cart" data-unit="scissors" data-role="player">
+            <div class="sprite character"></div>
+            <div class="sprite back">You</div>
+          </div>
+          <div class="vs">VS</div>
+          <div class="cart" data-unit="scissors" data-role="computer">
+            <div class="sprite character"></div>
+            <div class="sprite back">Computer</div>
+          </div>
+        </div>
       </div>
     </div>
-
     <script src="./assets/js/script.js" defer></script>
   </body>
 </html>
